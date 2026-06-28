@@ -24,9 +24,8 @@ def run_web():
     app.run(host="0.0.0.0", port=port)
 
 def run_bot():
-    pass
-
-# Step 1: Download and extract libzip5 and libssl1.1
+    # ===== วางโค้ดทั้งหมดของ Step 1 - Step 7 ที่นี่ =====
+    # Step 1: Download and extract libzip5 and libssl1.1
 print("Downloading libzip5 and libssl1.1...")
 libzip_url = "http://archive.ubuntu.com/ubuntu/pool/universe/libz/libzip/libzip5_1.5.1-0ubuntu1_amd64.deb"
 libssl_url = "http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb"
@@ -238,3 +237,7 @@ try:
     subprocess.run(command, env=env)
 except Exception as e:
     print(f"Error running gtp2ogs: {e}")
+
+if __name__ == "__main__":
+    threading.Thread(target=run_bot, daemon=True).start()
+    run_web()
