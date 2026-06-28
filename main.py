@@ -23,6 +23,9 @@ def run_web():
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
 
+def run_bot():
+    pass
+
 # Step 1: Download and extract libzip5 and libssl1.1
 print("Downloading libzip5 and libssl1.1...")
 libzip_url = "http://archive.ubuntu.com/ubuntu/pool/universe/libz/libzip/libzip5_1.5.1-0ubuntu1_amd64.deb"
